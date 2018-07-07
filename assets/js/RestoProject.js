@@ -32,7 +32,20 @@ $(document).ready(function () {
         }
     });
 
+      // ------------------------------------------------------- //
+    // Add Text Background from HTML [data-text] attribute
+    // ------------------------------------------------------- //
+    $('.has-background-text').each(function () {
+        $('<span class="text-bg"></span>').prependTo(this);
+        var textBackground = $(this).attr('data-text');
+        $(this).find('.text-bg').text(textBackground);
+    });
 
+    $('.has-background-text-gray').each(function () {
+        $('<span class="text-bg-gray"></span>').prependTo(this);
+        let textBackground = $(this).attr('data-text');
+        $(this).find('.text-bg-gray').text(textBackground);
+    });
     // ------------------------------------------------------- //
     // Navbar Toggler Button
     // ------------------------------------------------------- //
