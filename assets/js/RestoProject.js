@@ -1,11 +1,12 @@
 /*global $, window, document, setTimeout, WOW*/
 $(document).ready(function () {
     'use strict';
-    let preloader           = $('.preloader'),
+    let preloader           = $('.preloader'), // not used yet
         navbarToggleBtn     = $('.navbar .navbar-toggler'),
-        navbar              = $('.navbar'),
-        currentScrollTop    = 0,
-        c                   = 0;
+        navbar              = $('.navbar'), // not used yet
+        inputMaterial       = $('.input-material'),
+        currentScrollTop    = 0, // not used yet
+        c                   = 0; // not used yet
 
     // ---------------------------------------------- //
     // Animsition
@@ -31,6 +32,25 @@ $(document).ready(function () {
             window.location.href = o;
         }
     });
+    
+    // ------------------------------------------------------- //
+    // Transition Placeholders
+    // ------------------------------------------------------ //
+    inputMaterial.on('focus', function () {
+        $(this).siblings('label').addClass('active');
+        $(this).parents('.time_pick').siblings('label').addClass('active');
+    });
+
+    inputMaterial.on('blur', function () {
+        $(this).siblings('label').removeClass('active');
+
+        if ($(this).val() !== '') {
+            $(this).siblings('label').addClass('active');
+        } else {
+            $(this).siblings('label').removeClass('active');
+        }
+    });
+
 
       // ------------------------------------------------------- //
     // Add Text Background from HTML [data-text] attribute
@@ -52,4 +72,23 @@ $(document).ready(function () {
     navbarToggleBtn.on('click', function () {
         $(this).toggleClass('active');
     });
+
+
+ // ---------------------------------------------- //
+    // Redirection script
+    // ---------------------------------------------- //
+    $("#reservation").click(function(){
+        window.location.href = "reservation.html";
+    });
+
+     // ---------------------------------------------- //
+    // Date picker initialization
+    // ---------------------------------------------- //
+    $('#date').datepicker({
+        todayButton: new Date()
+    });
+    // ---------------------------------------------- //
+   // Time picker initialization
+  // ---------------------------------------------- //
+    $('.timepicker').timepicki();
 });

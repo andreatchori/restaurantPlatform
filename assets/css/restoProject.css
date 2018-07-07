@@ -95,7 +95,7 @@ section header {
 }
 
 body {
-  scrollbar-face-color: #fd8a06;
+  scrollbar-face-color: #006940;
   scrollbar-track-color: #fff;
 }
 
@@ -199,11 +199,12 @@ h2 small {
 }
 
 .btn-designdre:hover, .btn-designdre-outlined:hover, .btn-designdre:focus, .btn-designdre-outlined:focus {
-  color: #fd8a06;
+  color: #006940;
 }
 
 .btn-designdre:hover::before, .btn-designdre-outlined:hover::before, .btn-designdre:focus::before, .btn-designdre-outlined:focus::before {
   left: 0;
+  color: #fff;
 }
 
 .btn-designdre::before, .btn-designdre-outlined::before {
@@ -219,21 +220,23 @@ h2 small {
   z-index: -1;
   background: #fff;
   border: 1px solid #fff;
+  color: #fff;
 }
 
 .btn-designdre-outlined {
   background: none;
-  color: #34e89e;
   border: 1px solid #34e89e;
   box-shadow: none;
+  cursor: pointer;
+  color: #fff;
 }
 
 .btn-designdre-outlined::before {
 background: #34e89e;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  border: none;
+color: #fff;
+border: none;
 }
 
 .btn-designdre-outlined:hover, .btn-designdre-outlined:focus {
@@ -311,13 +314,13 @@ nav.navbar .search-btn {
   color: #fff !important;
   text-align: center;
   border-radius: 50%;
-  background: #fd8a06;
+  background: #006940;
   cursor: pointer;
   font-size: 0.8em;
   padding: 0 !important;
   margin-left: 15px !important;
   position: relative;
-  border: 1px solid #fd8a06;
+  border: 1px solid #006940;
   margin-top: 4px !important;
 }
 
@@ -440,7 +443,7 @@ section.hero .DRE a {
 section.menu .nav-tabs {
   text-align: center;
   border-radius: 100px;
-  border: 1px solid #fd8a06;
+  border: 1px solid #006940;
   padding: 15px;
   background: #fff;
 }
@@ -458,7 +461,7 @@ section.menu .nav-tabs .nav-link {
 }
 
 section.menu .nav-tabs .nav-link.active {
-  background: #fd8a06;
+  background: #006940;
   color: #fff;
 }
 
@@ -472,7 +475,7 @@ section.menu .dish {
 }
 
 section.menu .dish:hover {
-  background: #fd8a06;
+  background: #006940;
   color: #fff;
 }
 
@@ -483,7 +486,7 @@ section.menu .dish:hover .price {
 section.menu .price {
   font-family: "Roboto", sans-serf;
   font-weight: 500;
-  color: #fd8a06;
+  color: #006940;
   transition: all 0.3s;
 }
 
@@ -500,4 +503,202 @@ section.menu .price {
   section.menu .nav-tabs .nav-link {
     width: 100%;
   }
+}
+
+/* ===================================================================
+    RESERVATION SECTION
+===================================================================  */
+section.reservation form {
+  padding: 90px 50px 70px;
+  border: 1px solid #006940;
+  position: relative;
+}
+
+section.reservation form .ustensils {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #006940;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  left: 100px;
+}
+
+/* Media Query Reservation Section --------------------------------------- */
+@media (max-width: 992px) {
+  section.reservation .form-holder {
+    margin: 20px;
+  }
+
+  section.reservation form {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+/** Form Elements **/
+.form-group {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.input-material {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0;
+  background: none;
+  transition: all 0.3s;
+  font-family: "Roboto", sans-serf;
+  font-weight: 400;
+  outline: none;
+}
+
+.input-material[type="password"] {
+  color: #006940;
+}
+
+.input-material::-moz-placeholder {
+  font-weight: 300;
+  font-family: "Roboto", sans-serf;
+  color: #aaa;
+}
+
+.input-material::-webkit-input-placeholder {
+  font-weight: 300;
+  font-family: "Roboto", sans-serf;
+  color: #aaa;
+}
+
+.input-material:-ms-input-placeholder {
+  font-weight: 300;
+  font-family: "Roboto", sans-serf;
+  color: #aaa;
+}
+
+.input-material:focus {
+  border-color: #006940;
+}
+
+.input-material + label, label[for="time-alt"] {
+  font-size: 0.9em;
+  color: #999;
+  font-weight: 400;
+  transition: all 0.3s;
+  font-family: "Roboto", sans-serf;
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  cursor: text;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transform-origin: top left;
+  text-transform: uppercase;
+}
+
+.input-material + label.active, label[for="time-alt"].active {
+  transform: translateY(-30px);
+  font-size: 0.85em;
+  color: #006940;
+}
+
+.input-material + label:focus, label[for="time-alt"]:focus {
+  border-color: #006940;
+}
+
+.checkbox-template {
+  display: none;
+}
+
+.checkbox-template + label {
+  position: relative;
+  padding-left: 30px;
+  font-size: 1em;
+  font-weight: 300;
+  color: #777;
+  font-family: "Roboto", sans-serf;
+  cursor: pointer;
+}
+
+.checkbox-template + label::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+}
+
+.checkbox-template + label::after {
+  content: '\f00c';
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background: #006940;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.65em;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+  font-family: 'FontAwesome';
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.checkbox-template:checked + label::after {
+  opacity: 1;
+}
+
+.radio-template {
+  display: none;
+}
+
+.radio-template + label {
+  position: relative;
+  padding-left: 30px;
+  font-size: 1em;
+  font-weight: 300;
+  color: #777;
+  font-family: "Roboto", sans-serf;
+  cursor: pointer;
+}
+
+.radio-template + label::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #eee;
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+}
+
+.radio-template + label::after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 6px solid #006940;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.radio-template:checked + label::after {
+  opacity: 1;
 }
